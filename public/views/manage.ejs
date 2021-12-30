@@ -1,0 +1,64 @@
+<div id="vueManage" class="row mx-0 justify-content-center">
+    <!-- Card 1 -->
+    <div class="col-lg-8 my-2 px-0">
+        <div class="card box-shadow">
+            <div class="card-body py-4">
+                <div class="d-flex justify-content-between">
+                    <h1 class="h3">Create system</h1>
+                    <div>
+                        <button v-if="isEdit" v-on:click="deleteSystem()" class="btn btn-sm btn-outline-danger">Delete system</button>
+                    </div>
+                </div>
+                <div class="row mx-0">
+                    <div class="col-lg-6 px-0">
+                        <div class="form-group my-4 pe-0 pe-lg-1">
+                            <label>System name</label>
+                            <input data-vv-name="system name" v-model="form.title" v-validate="'required'" type="text" class="form-control" />
+                            <small class="text-danger">{{ errors.first('system name') }}</small>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 px-0">
+                        <div class="form-group mb-4 my-lg-4 ps-0 ps-lg-1">
+                            <label>Creator name</label>
+                            <input data-vv-name="creator name" v-model="form.createdBy" v-validate="'required'" type="text" class="form-control" />
+                            <small class="text-danger">{{ errors.first('creator name') }}</small>
+                        </div>
+                    </div>
+                    <div class="form-group mb-4 px-0">
+                        <div class="d-flex justify-content-between">
+                            <label>System description</label>
+                            <small v-bind:class="{ 'text-danger': lotCaracters }" class="text-secondary">{{ descriptionLength }}/150</small>
+                        </div>
+                        <textarea data-vv-name="system description" v-model="form.description" v-validate="'required|length:150'" rows="3" class="form-control"></textarea>
+                        <small class="text-danger">{{ errors.first('system description') }}</small>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <h2 class="h5 mb-3">System elements</h2>
+                    <div>
+                        <button v-on:click="goToCreateElement" class="btn btn-outline-secondary box-shadow btn-sm">Create element</button>
+                    </div>
+                </div>
+                <ul class="list-group">
+                    <li v-for="(el, i) in form.elements" class="list-group-item d-flex justify-content-between">
+                        {{ el.element }}
+                        <div>
+                            <a v-on:click="goToEditElement(i)" class="mx-1 cursor-pointer"><i>Edit</i></a>
+                            <a v-on:click="deleteElement(i)" class="text-muted cursor-pointer mx-1"><i>Delete</i></a>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="card-footer bg-white">
+                <div class="d-flex justify-content-between">
+                    <button v-on:click="backToHome()" class="btn btn-sm btn-outline-secondary box-shadow">Cancel</button>
+                    <button v-on:click="create()" class="btn btn-sm btn-success box-shadow">Finish system creation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/views/manage.vue"></script>
