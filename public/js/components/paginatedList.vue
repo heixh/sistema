@@ -40,7 +40,7 @@ Vue.component('paginated-list', {
         </ul>
         <div class="d-flex justify-content-center my-4">
             <button class="btn btn-sm btn-outline-primary mx-1" :disabled="pageNumber === 0" @click="prevPage">Anterior</button>
-            <button class="btn btn-sm btn-outline-primary mx-1" :disabled="pageNumber >= pageCount -1" @click="nextPage">Próxima</button>
+            <button class="btn btn-sm btn-outline-primary mx-1" :disabled="pageNumber >= pageCount -1" @click="nextPage">Siguiente</button>
         </div>
     </div>
     `

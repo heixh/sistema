@@ -82,7 +82,7 @@ vueElement = new Vue({
         // Import question actions:
         loadQuestions() {
             const system = helper.getTempSystem();
-            this.modalContent.title = 'Questions already registered';
+            this.modalContent.title = 'Preguntas ya registradas';
             if (system.id !== null) {
                 fetch(`/questions/${system.id}`, {
                     method: "GET",
