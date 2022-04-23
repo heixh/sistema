@@ -41,7 +41,7 @@ Vue.component('system-card', {
     <div class="card box-shadow card-system mx-1">
         <div class="card-header bg-white py-3 px-4">
             <h1 class="h5 mb-0">{{reduceTitle}}</h1>
-            <small class="text-muted">Created by: {{createdBy}}</small>
+            <small class="text-muted">Abreviatura: {{createdBy}}</small>
         </div>
         <div class="card-body px-4">
             <p class="text-justify text-muted mb-0">
@@ -50,8 +50,8 @@ Vue.component('system-card', {
         </div>
         <div class="card-footer py-3 px-4">
             <div class="d-flex justify-content-between">
-                <a :href="manageURL" class="btn btn-sm box-shadow btn-outline-secondary"><i class="fas fa-wrench me-1"></i>Manage</a>
-                <a :href="systemURL" class="btn btn-sm box-shadow btn-secondary"><i class="fas fa-play-circle me-1"></i>Start</a>
+                <a :href="manageURL" class="btn btn-sm box-shadow btn-outline-secondary"><i class="fas fa-wrench me-1"></i>Editar</a>
+                <a :href="systemURL" class="btn btn-sm box-shadow btn-secondary"><i class="fas fa-play-circle me-1"></i>Iniciar</a>
             </div>
         </div>
     </div>

@@ -3,13 +3,13 @@
     <div class="col-lg-8 my-2 px-0">
         <div class="card box-shadow">
             <div class="card-header text-center">
-                <h2 class="h5 text-secondary mt-4">The result element is:</h2>
+                <h2 class="h5 text-secondary mt-4">El elemento de resultado es:</h2>
                 <h1 class="h4 text-uppercase">{{ element.element }}</h1>
             </div>
             <div class="card-body py-4">
 
                 <!-- History -->
-                <h2 class="h5 text-secondary text-center mt-4">History to get this result</h2>
+                <h2 class="h5 text-secondary text-center mt-4">Historial para obtener el resultado</h2>
                 <ul class="list-group list-group-flush">
                     <li v-for="obj in history" class="list-group-item">
                         <b>{{ obj.question.question }}</b>
@@ -19,17 +19,17 @@
                 </ul>
 
                 <!-- Other elements -->
-                <h2 class="h5 text-secondary text-center mt-4">Punctuation of the elements</h2>
+                <h2 class="h5 text-secondary text-center mt-4">Puntuación de los elementos</h2>
                 <ul class="list-group list-group-flush">
                     <li v-for="el in allElements" class="list-group-item">
                         <b>{{ el.element }}</b>
                         <br />
-                        <i>Points: {{ el.points }}</i>
+                        <i>Puntos: {{ el.points }}</i>
                     </li>
                 </ul>
             </div>
             <div class="card-footer d-flex justify-content-end">
-                <a href="/" class="btn btn-sm btn-primary">Back to home</a>
+                <a href="/" class="btn btn-sm btn-primary">Regresar al inicio</a>
             </div>
         </div>
     </div>
